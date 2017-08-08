@@ -1,0 +1,11 @@
+<div class="container uneaten">
+    <h2> Pick a burger - click the button to eat it! </h2>
+    {{#each burgers}}
+      {{#unless this.devoured}}
+        <div>
+          {{this.burger_name}}
+          {{!-- {{> burger/devour-burger}} --}}
+        </div>
+      {{/unless}}
+    {{/each}}
+</div>
