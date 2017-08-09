@@ -6,7 +6,7 @@ USE burgers_db;
 CREATE TABLE burgers (
   id int (10) AUTO_INCREMENT,
   burger_name varchar(30) NOT NULL,
-  devoured BOOL NOT NULL DEFAULT 0,
+  devoured BOOL NOT NULL DEFAULT false,
   createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   PRIMARY KEY(id)
 );

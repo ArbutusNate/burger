@@ -8,9 +8,8 @@ var burger = require("../models/burger.js");
 // Create all our routes and set up logic within those routes where required.
 
 router.get("/", function(req, res) {
-  console.log("burger-controller.js running.");
+  console.log("burger-controller.js running GET");
   burger.all(function(data) {
-    console.log("Data to be rendered:" + data);
     var hbsObject = {
       burgers: data
     };
@@ -18,6 +17,26 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
+
+router.post("/", function(req,res){
+  console.log("burger-controller.js running POST");
+  console.log("New Burger Name: " + req.params.name)
+  // console.log("resuest: " + req.body);
+  // console.log("res: " + res.body);
+  burger.create(req.body.newBurger, function (){
+    res.redirect("/");
+  });
+});
+
+router.put("/:id", function(req,res){
+  console.log("burger-controller.js running PUT");
+  var condition = "id = " + req.params.id;
+  var devoured = "devoured = " + true;
+  burger.devour(devoured, condition, function(){
+    res.redirect("/");
+  })
+  // console.log("burger ID to be devoured: " req.params.id)
+})
 
 // router.update("/:id", function(req,res) {
 //   burger.devour()

@@ -4,8 +4,21 @@
       {{#unless this.devoured}}
         <div>
           {{this.burger_name}}
-          {{!-- {{> burger/devour-burger}} --}}
+          {{> burger/devour-burger}}
         </div>
       {{/unless}}
     {{/each}}
+    <h2> You already ate these burgers - don't you remember?!</h2>
+    {{#each burgers}}
+      {{#if this.devoured}}
+        <div>
+          {{this.burger_name}}
+        </div>
+      {{/if}}
+    {{/each}}
+    <h2>Add A Burger</h2>
+    <form action="/" method="POST">
+      <input type="text" name="newBurger" id="newBurgerName">
+      <button type="submit">Add My Burger!</button>
+    </form>
 </div>
