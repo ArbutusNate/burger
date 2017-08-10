@@ -20,7 +20,7 @@ var burger = {
     console.log("burger.js condition: " + condition);
               //Devoured, condition, cb)
     orm.devour(devoured, condition, function(req, res){
-      console.log("burger.js is running 'devour' function on id" + bId + ".");
+      console.log("burger.js is running 'devour' function on id" + condition + ".");
       cb(res);
     })
   }

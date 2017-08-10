@@ -13,7 +13,7 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    console.log("handlebars object: " + hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -30,8 +30,8 @@ router.post("/", function(req,res){
 
 router.put("/:id", function(req,res){
   console.log("burger-controller.js running PUT");
-  var condition = "id = " + req.params.id;
-  var devoured = "devoured = " + true;
+  var condition = req.params.id;
+  var devoured = true;
   burger.devour(devoured, condition, function(){
     res.redirect("/");
   })

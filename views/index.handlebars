@@ -1,13 +1,15 @@
-<div class="container uneaten">
+<div class="uneaten">
     <h2> Pick a burger - click the button to eat it! </h2>
     {{#each burgers}}
       {{#unless this.devoured}}
         <div>
-          {{this.burger_name}}
+          {{this.id}}. {{this.burger_name}}
           {{> burger/devour-burger}}
         </div>
       {{/unless}}
     {{/each}}
+</div>
+<div class="devoured">
     <h2> You already ate these burgers - don't you remember?!</h2>
     {{#each burgers}}
       {{#if this.devoured}}
@@ -16,6 +18,7 @@
         </div>
       {{/if}}
     {{/each}}
+<div class="add">
     <h2>Add A Burger</h2>
     <form action="/" method="POST">
       <input type="text" name="newBurger" id="newBurgerName">

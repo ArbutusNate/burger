@@ -58,8 +58,8 @@ var orm = {
     console.log("orm.js running - devour function.");
     console.log(devoured);
     console.log(condition);
-    var queryString = "UPDATE burgers SET ? WHERE ?";
-    connection.query(queryString, devoured, condition, function(err, result){
+    var queryString = "UPDATE burgers SET devoured = ? WHERE id = ?";
+    connection.query(queryString, [devoured, condition], function(err, result){
       if(err){
         throw err;
       } else {
