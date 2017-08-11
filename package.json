@@ -1,8 +1,8 @@
 {
-  "name": "burger",
+  "name": "my_sequelize_burger",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,13 +11,14 @@
     "url": "git+https://github.com/ArbutusNate/burger.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nathan Crawford",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ArbutusNate/burger/issues"
   },
   "homepage": "https://github.com/ArbutusNate/burger#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.9",

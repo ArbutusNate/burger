@@ -10,7 +10,7 @@ var app = express();
 // Serve static content for the app from the "asset" directory in the application directory.
 app.use(express.static("assets"));
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
